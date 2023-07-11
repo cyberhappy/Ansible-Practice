@@ -1,0 +1,23 @@
+---
+- name: First updating the system
+  become: true
+  hosts: Debian-Target
+  tasks:
+    - name: First trying to update the system
+      apt:
+        update_cache: yes
+
+    - name: upgrading the system
+      apt:
+        upgrade: yes
+
+    - name: Installing the apache webs server right now
+      apt:
+        name: apache2
+        state: latest
+
+    - name: starting the services and also enabling
+      systemd:
+        name: apache2
+        state: started
+        enabled: yes

@@ -1,0 +1,8 @@
+---
+- name: Rebooting all the hosts target
+  become: yes
+  hosts: server
+  tasks:
+    - name: Rebooting all of them 
+      shell:
+        cmd: reboot -f

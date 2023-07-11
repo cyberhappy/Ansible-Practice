@@ -1,0 +1,29 @@
+---
+- name: adding a full user in the target machines
+  become: true
+  hosts: server
+  vars:
+    username: abdiladif
+    password: abdiladif
+    owner: abdiladif
+    home_dir: /home/abdiladif
+    shell: /bin/bash
+
+  tasks:
+    - name: adding the user to the system
+      ansible.builtin.user:
+        name: "{{username}}"
+        shell: "{{shell}}"
+        home: "{{home_dir}}"
+        password: "{{password | password ('sha512')}}" 
+      
+    - name: creating a directory and adding group 
+      ansible.builtin.file: 
+        path: "{{home_dir}}"
+        state: directory
+        owner: "{{username}}"
+        group: "{{username}}"
+
+    
+
+

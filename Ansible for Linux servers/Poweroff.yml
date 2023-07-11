@@ -1,0 +1,13 @@
+---
+# shutdown all hosts or target machines
+- name: PowerOff the node machines all of them
+  become: true
+  hosts: centos
+  tasks:
+    - name: starting to PowerOff the systems
+      command:
+        cmd: PowerOff
+  
+    - name: printing if successfully powered PowerOff all systems
+      debug:
+        msg: Successfully PoweredOff all systems

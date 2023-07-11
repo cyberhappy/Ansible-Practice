@@ -1,0 +1,10 @@
+---
+- name: Uninstall apache2 in both centos
+  become: yes
+  hosts: centos
+  tasks:
+    - name: Uninstalling the apache or httpd in both servers"
+      yum:
+        name: httpd
+        state: absent
+        

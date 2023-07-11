@@ -1,0 +1,16 @@
+---
+- name: Adding the banner to both routers
+  hosts: switches
+  become: true
+  tasks:
+    - name: starting to add the banner in routers
+      ios_banner:
+        banner: login
+        text: |
+          *************************************************
+          *     Welcome back to the system!                *
+          *     If you are a legitimate user,              *
+          *     please proceed with your login.            *
+          *     Unauthorized access is strictly prohibited.*
+          *************************************************
+        state: present

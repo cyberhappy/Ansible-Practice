@@ -1,0 +1,18 @@
+---
+- name: Installing UFW in Debian 11 Bully eyes
+  become: true
+  hosts: Debian
+  tasks:
+
+  # Installing the UFW to the Debian system
+    - name: Started the installation for UFW 
+      apt:
+        name: ufw
+        state: latest
+
+# Starting the UFW or enabling to the system 
+    - name: starting the UFW service 
+      service:
+        name: ufw
+        state: started
+        enabled: yes

@@ -1,0 +1,12 @@
+---
+- name: Adding a loopback interface in both routers
+  hosts: routers
+  become: true
+  tasks: 
+
+    - name: started adding the loopback interface
+      ios_interfaces:
+        name: loopback23
+        description: This is A loopback interface that will be using for testing purpose
+        enabled: true
+        state: present

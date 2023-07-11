@@ -1,0 +1,11 @@
+---
+- name: trying to upgrade the target machines
+  become: true
+  hosts: upgrading
+  tasks:
+    - name: Beginning the update first
+      apt:
+        update_cache: yes
+    - name: Beginning the upgrade right now
+      apt:
+        upgrade: yes

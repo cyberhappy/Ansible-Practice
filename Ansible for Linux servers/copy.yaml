@@ -1,0 +1,9 @@
+---
+- name: copy testing.txt
+  become: yes
+  hosts: server
+  tasks:
+    - name: started the job to copy the the testing.txt file into the target machines
+      copy:
+        src: /opt/testing.txt
+        dest: /opt/testing.txt

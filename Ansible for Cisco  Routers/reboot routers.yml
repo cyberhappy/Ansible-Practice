@@ -1,0 +1,13 @@
+---
+# Reboot both routers in a same time 
+- name: Rebooting the both routers started
+  become: yes
+  hosts: routers
+  vars:
+    reboot: reboot
+  tasks:
+    - name: Tasks starts in here to reboot the both routers
+      ios_command:
+        commands:
+          "{{reboot}}"
+          

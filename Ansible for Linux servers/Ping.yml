@@ -1,0 +1,13 @@
+---
+# Writing a simple ping playbook
+ - name: Ping playbook
+   become: true
+   hosts: centos
+   tasks:
+    - name: Ping module will be using here
+      ansible.builtin.ping:
+
+    - name: printing a line of a text by using debug module
+      debug:
+        msg: "Hello Do you see the message"
+        
