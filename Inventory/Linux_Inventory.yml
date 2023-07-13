@@ -1,0 +1,16 @@
+centos:
+  hosts:
+    Centos-Target1:
+      ansible_host: 172.16.35.130
+      ansible_connection: ssh
+      ansible_user: root
+
+    Centos-Target2:
+      ansible_host: 172.16.35.131
+      ansible_connection: ssh
+      ansible_user: root
+
+    Centos-Target3:
+      ansible_host: 172.16.35.129
+      ansible_connection: ssh
+      ansible_user: root
